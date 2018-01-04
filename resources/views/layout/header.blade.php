@@ -1,4 +1,6 @@
-<html lang="en" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js opacity generatedcontent pointerevents"><head>
+<html lang="en">
+
+<head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="x-ua-compatible" content="IE=edge">
@@ -9,6 +11,7 @@
         <link rel="stylesheet" href="site/assets/style.css">
         <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 
@@ -367,7 +370,7 @@
 
                    <i class="fa fa-phone" aria-hidden="true"></i>
                <div class="title-phone hide-for-small-only ">
-                <p>099-999-999</p>
+                <p>@yield('phone')</p>
                 </div>
                </div>
 
@@ -377,37 +380,7 @@
         <!-- content -->
         @yield('content')
 
-       <div class="row " style="margin-bottom: 70px;">
-                <div class="ad " style="direction: rtl;">
-                    <div class="ad-image mobile-hidden">
-                        <img src="http://dukkan-masr.com/hospital/final_h/site/assets/images/temp/ad.png" width="189" height="219" alt="">
-                    </div>
-                    <!-- /.ad-image -->
-
-                    <header class="ad-head">
-                        <h3>Book now </h3>
-
-                        <p>Book now with ease through the site</p>
-                    </header>
-                    <!-- /.ad-head -->
-                                        ?&gt;
-                   
-                    <div class="ad-actions">
-                        <a href="http://dukkan-masr.com/hospital/final_h/start_account/register" class="button btn-white btn-small">Join now </a>
-                    </div>
-                    <!-- /.ad-actions -->
-                                        <div class="ad-contacts">
-                        <p class="phone">
-                            <i class="fa fa-mobile"></i>
-                            <small>Or contact us for reservations</small>
-                            <a href="tel: 8433">8433</a>
-                        </p>
-                        <!-- /.phone -->
-                    </div>
-                    <!-- /.ad-contacts -->
-                </div>
-                <!-- /.ad -->
-            </div>
+       
             <!-- /.row -->
 
         </div>
@@ -994,40 +967,6 @@
 
 
 
-<script type="text/javascript">
-    $('#category').change(function() {
-        var category_id = $(this).val();
-        if(category_id != '') {
-            var obj = {category_id : category_id};
-            $.post(
-                'http://dukkan-masr.com/hospital/final_h/home/get_doctors_by_cat_id',
-                obj,
-                function(data) {
-                    $('#doctors_list').html(data);
-                },
-                'html'
-            );
-        }
-    });
-</script>
 
-<script type="text/javascript">
 
-    $('#doctors_list').change(function() {
-        var doctor_id = $(this).val();
-
-        if(doctor_id != '') {
-            var obj = {doctor_id : doctor_id};
-            $.post(
-                'http://dukkan-masr.com/hospital/final_h/home/get_times_by_doctor_id',
-                obj,
-                function(data) {
-                    //alert(data);
-                    $('#times_list').html(data);
-                },
-                'html'
-            );
-        }
-    });
-</script>
 </div></body></html>
